@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué es HTML, CSS y JavaScript?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .slide {
+            display: none;
+            padding: 2rem;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .slide-title {
+            font-size: 24px;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .slide-content {
+            font-size: 18px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #007bff;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>¿Qué es HTML, CSS y JavaScript?</h1>
+</header>
+
+<section id="slide1" class="slide active">
+    <h2 class="slide-title">¿Qué es HTML?</h2>
+    <p class="slide-content">
+        HTML (HyperText Markup Language) es el lenguaje estándar para crear páginas web. Sirve para estructurar el contenido mediante etiquetas. Un documento HTML incluye elementos como encabezados, párrafos, imágenes y enlaces.
+    </p>
+    <pre class="slide-content">
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;Ejemplo de HTML&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;h1&gt;¡Hola, Mundo!&lt;/h1&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+    </pre>
+</section>
+
+<section id="slide2" class="slide">
+    <h2 class="slide-title">¿Qué es CSS?</h2>
+    <p class="slide-content">
+        CSS (Cascading Style Sheets) es el lenguaje utilizado para diseñar y darle estilo a una página HTML. Con CSS, podemos cambiar colores, fuentes, alineaciones y mucho más, mejorando la apariencia visual de la página.
+    </p>
+    <pre class="slide-content">
+        &lt;style&gt;
+            body {
+                background-color: lightblue;
+            }
+            h1 {
+                color: navy;
+                text-align: center;
+            }
+        &lt;/style&gt;
+    </pre>
+</section>
+
+<section id="slide3" class="slide">
+    <h2 class="slide-title">¿Qué es JavaScript?</h2>
+    <p class="slide-content">
+        JavaScript es un lenguaje de programación que permite agregar interactividad a las páginas web. Con JavaScript, podemos crear eventos, animaciones y respuestas dinámicas a las acciones del usuario.
+    </p>
+    <pre class="slide-content">
+        &lt;script&gt;
+            document.getElementById('button').onclick = function() {
+                alert('¡Hola, mundo interactivo!');
+            };
+        &lt;/script&gt;
+    </pre>
+    <button id="button" class="btn">Haz clic para ver JavaScript</button>
+</section>
+
+<div class="buttons">
+    <button class="btn" onclick="changeSlide(1)">HTML</button>
+    <button class="btn" onclick="changeSlide(2)">CSS</button>
+    <button class="btn" onclick="changeSlide(3)">JavaScript</button>
+</div>
+
+<footer>
+    <p>Presentación creada por [Tu Nombre]</p>
+</footer>
+
+<script>
+    let currentSlide = 1;
+
+    function changeSlide(slideNumber) {
+        document.querySelector('.active').classList.remove('active');
+        document.getElementById('slide' + slideNumber).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
